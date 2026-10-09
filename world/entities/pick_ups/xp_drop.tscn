@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://tssd4sktd0g6"]
+
+[ext_resource type="Script" uid="uid://bwpqkcdvqbcos" path="res://world/entities/pick_ups/xp_drop.gd" id="1_nep7x"]
+[ext_resource type="Texture2D" uid="uid://h6kl66m1gnff" path="res://assets/icon.svg" id="2_1phjv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 22.0
+
+[node name="XpDrop" type="Area2D" unique_id=389510622 groups=["xp"]]
+script = ExtResource("1_nep7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62227793]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1237935720]
+rotation = 2.942625
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_1phjv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

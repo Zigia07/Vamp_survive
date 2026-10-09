@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://decejr2ih5gqv"]
+
+[ext_resource type="Script" uid="uid://cip0xo0nkrpxi" path="res://tween_animation.gd" id="1_qqpve"]
+
+[node name="Node" type="Node" unique_id=407242116]
+script = ExtResource("1_qqpve")
+tween_time = null
+scale_max = null
+scale_min = null

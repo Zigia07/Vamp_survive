@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b5r56xvhs3ilf"]
+
+[ext_resource type="Script" uid="uid://c24b2yjgxv16y" path="res://systems/upgrade_data.gd" id="1_bptxh"]
+
+[resource]
+script = ExtResource("1_bptxh")
+upgrade_name = "Damage"
+description = "Attack is increased by 2"
+amount = 2.0
+metadata/_custom_type_script = "uid://c24b2yjgxv16y"

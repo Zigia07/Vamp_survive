@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c3o7817hnub5"]
+
+[ext_resource type="Script" uid="uid://c8o1p6ekvf8y8" path="res://systems/enemy_data.gd" id="1_t7xpj"]
+[ext_resource type="PackedScene" uid="uid://lg538o68sh1g" path="res://world/entities/enemies/basic_enemy.tscn" id="1_wlf7w"]
+[ext_resource type="Texture2D" uid="uid://h6kl66m1gnff" path="res://assets/icon.svg" id="3_otpce"]
+
+[resource]
+script = ExtResource("1_t7xpj")
+enemy_name = "3"
+scene = ExtResource("1_wlf7w")
+sprite = ExtResource("3_otpce")
+sprite_scale = 0.7
+collision_scale = 2.0
+base_hp = 20.0
+base_speed = 30.0
+xp_value = 100
+metadata/_custom_type_script = "uid://c8o1p6ekvf8y8"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4g2sihwqsb2t"]
+
+[ext_resource type="Script" uid="uid://cv7e1khfa4ifg" path="res://systems/game_win_manager.gd" id="1_mdvc2"]
+
+[node name="GameWinManager" type="Node2D" unique_id=1440865314 groups=["win_manager"]]
+script = ExtResource("1_mdvc2")

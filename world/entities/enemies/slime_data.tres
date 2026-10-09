@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://chqfwt688cvad"]
+
+[ext_resource type="PackedScene" uid="uid://lg538o68sh1g" path="res://world/entities/enemies/basic_enemy.tscn" id="1_4kveb"]
+[ext_resource type="Script" uid="uid://c8o1p6ekvf8y8" path="res://systems/enemy_data.gd" id="1_k64tq"]
+[ext_resource type="Texture2D" uid="uid://forcw476cvne" path="res://assets/slime.png.png" id="3_wbnf1"]
+
+[resource]
+script = ExtResource("1_k64tq")
+enemy_name = "Slime"
+scene = ExtResource("1_4kveb")
+sprite = ExtResource("3_wbnf1")
+sprite_scale = 5.0
+collision_scale = 2.0
+base_hp = 50.0
+base_speed = 50.0
+base_damage = 20.0
+metadata/_custom_type_script = "uid://c8o1p6ekvf8y8"

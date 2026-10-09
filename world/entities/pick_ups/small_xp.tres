@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="XPDropData" format=3 uid="uid://bt54utbs42xdw"]
+
+[ext_resource type="Script" uid="uid://ca778aoqmnjxv" path="res://systems/xp_data.gd" id="1_77fd4"]
+[ext_resource type="Texture2D" uid="uid://h6kl66m1gnff" path="res://assets/icon.svg" id="2_h7m8f"]
+
+[resource]
+script = ExtResource("1_77fd4")
+sprite = ExtResource("2_h7m8f")
+value = 2
+metadata/_custom_type_script = "uid://ca778aoqmnjxv"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b6o7bgw62hgry"]
+
+[ext_resource type="Script" uid="uid://c24b2yjgxv16y" path="res://systems/upgrade_data.gd" id="1_drgip"]
+
+[resource]
+script = ExtResource("1_drgip")
+upgrade_name = "Health"
+description = "Max hit points increased by 10"
+stat = 2
+amount = 10.0
+metadata/_custom_type_script = "uid://c24b2yjgxv16y"

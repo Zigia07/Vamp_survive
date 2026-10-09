@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://lg538o68sh1g"]
+
+[ext_resource type="Script" uid="uid://is5ml3xst1du" path="res://world/entities/enemies/basic_enemy.gd" id="1_7k7rq"]
+[ext_resource type="Shader" uid="uid://6sdb0ngblv2k" path="res://assets/hit_flash.tres" id="2_dd5ke"]
+[ext_resource type="PackedScene" uid="uid://boful8qjabd8e" path="res://systems/health.tscn" id="2_nosra"]
+[ext_resource type="PackedScene" uid="uid://decejr2ih5gqv" path="res://tween_animation.tscn" id="4_2lsy6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nosra"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6spvd"]
+resource_local_to_scene = true
+shader = ExtResource("2_dd5ke")
+shader_parameter/enable = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[sub_resource type="Animation" id="Animation_dd5ke"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2lsy6"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7773r"]
+_data = {
+&"RESET": SubResource("Animation_dd5ke"),
+&"flash": SubResource("Animation_2lsy6")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=133079788 groups=["enemy"]]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_7k7rq")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1857081705]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1222885665]
+shape = SubResource("CircleShape2D_nosra")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=673988085 groups=["enemy_sprite"]]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6spvd")
+scale = Vector2(0.5, 0.5)
+
+[node name="Health" parent="." unique_id=326601082 instance=ExtResource("2_nosra")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=449389998]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="HitFlashAnimationPlayer" type="AnimationPlayer" parent="." unique_id=112575219]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_7773r")
+
+[node name="Tween_Anim" parent="." unique_id=407242116 instance=ExtResource("4_2lsy6")]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

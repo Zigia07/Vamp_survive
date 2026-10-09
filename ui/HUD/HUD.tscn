@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bxct7emxgkpk1"]
+
+[ext_resource type="Script" uid="uid://dg46a0qs5462e" path="res://ui/HUD/HUD.gd" id="1_gfnvi"]
+[ext_resource type="Script" uid="uid://b1gtndhk0e42j" path="res://ui/HUD/kill_counter.gd" id="2_vgx8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x8eu"]
+bg_color = Color(0.8890374, 0.17606142, 0.24432871, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66st8"]
+bg_color = Color(0.5609, 0.71, 0.60065997, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq78t"]
+bg_color = Color(0.8055934, 0.80559343, 0.8055932, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x30l"]
+bg_color = Color(0.25190085, 0.6640984, 0.73420525, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD" type="CanvasLayer" unique_id=2134573198]
+script = ExtResource("1_gfnvi")
+
+[node name="LevelLabel" type="Label" parent="." unique_id=240468516]
+offset_left = 807.0
+offset_top = 28.0
+offset_right = 849.0
+offset_bottom = 87.0
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=810577360]
+offset_left = 25.0
+offset_top = 28.0
+offset_right = 304.0
+offset_bottom = 61.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0x8eu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_66st8")
+show_percentage = false
+
+[node name="XPBar" type="ProgressBar" parent="." unique_id=1575170873]
+offset_left = 858.0
+offset_top = 34.0
+offset_right = 1119.0
+offset_bottom = 69.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fq78t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3x30l")
+show_percentage = false
+
+[node name="KillCounter" type="Label" parent="." unique_id=708914487]
+offset_left = 21.0
+offset_top = 111.0
+offset_right = 112.0
+offset_bottom = 164.0
+script = ExtResource("2_vgx8b")

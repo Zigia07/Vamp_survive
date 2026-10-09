@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://lqurwjlhmgdh"]
+
+[ext_resource type="Script" uid="uid://c8o1p6ekvf8y8" path="res://systems/enemy_data.gd" id="1_ldg01"]
+[ext_resource type="PackedScene" uid="uid://lg538o68sh1g" path="res://world/entities/enemies/basic_enemy.tscn" id="1_vie4i"]
+[ext_resource type="Texture2D" uid="uid://h6kl66m1gnff" path="res://assets/icon.svg" id="3_mp3ff"]
+
+[resource]
+script = ExtResource("1_ldg01")
+enemy_name = "Bat"
+scene = ExtResource("1_vie4i")
+sprite = ExtResource("3_mp3ff")
+sprite_scale = 0.4
+base_hp = 6.0
+base_speed = 180.0
+metadata/_custom_type_script = "uid://c8o1p6ekvf8y8"

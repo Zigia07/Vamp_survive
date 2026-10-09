@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://d0w1mw1p2gxb2"]
+
+[ext_resource type="Script" uid="uid://c24b2yjgxv16y" path="res://systems/upgrade_data.gd" id="1_mqvju"]
+
+[resource]
+script = ExtResource("1_mqvju")
+upgrade_name = "Bigger attack"
+description = "Attack increases in size"
+stat = 4
+amount = 0.2
+metadata/_custom_type_script = "uid://c24b2yjgxv16y"

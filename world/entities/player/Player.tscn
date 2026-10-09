@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://fdq2puq3ee0h"]
+
+[ext_resource type="Script" uid="uid://b5v7cadk146ar" path="res://world/entities/player/player.gd" id="1_oq8ah"]
+[ext_resource type="Texture2D" uid="uid://h6kl66m1gnff" path="res://assets/icon.svg" id="2_jj2vj"]
+[ext_resource type="PackedScene" uid="uid://boful8qjabd8e" path="res://systems/health.tscn" id="3_gl1f5"]
+[ext_resource type="Script" uid="uid://c5a1ajh7nntse" path="res://world/entities/player/basic_attack.gd" id="4_dyhia"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 154.00325
+
+[node name="Player" type="CharacterBody2D" unique_id=1164220307 groups=["player"]]
+collision_mask = 10
+script = ExtResource("1_oq8ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=775558550]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=256864315]
+scale = Vector2(0.4, 0.6)
+texture = ExtResource("2_jj2vj")
+
+[node name="Health" parent="." unique_id=326601082 instance=ExtResource("3_gl1f5")]
+max_hp = 50.0
+
+[node name="Attack" type="Area2D" parent="." unique_id=425058729]
+collision_mask = 4
+script = ExtResource("4_dyhia")
+
+[node name="AOE" type="CollisionShape2D" parent="Attack" unique_id=175346276]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1642124089]
+
+[connection signal="body_entered" from="Attack" to="Attack" method="_on_body_entered"]

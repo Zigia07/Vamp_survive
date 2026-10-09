@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://co771l1fus4o7"]
+
+[ext_resource type="Script" uid="uid://cv0vs7n114jli" path="res://systems/upgrade_manager.gd" id="1_sorxq"]
+[ext_resource type="Script" uid="uid://c24b2yjgxv16y" path="res://systems/upgrade_data.gd" id="2_s6nuu"]
+[ext_resource type="Resource" uid="uid://b6o7bgw62hgry" path="res://world/entities/upgrades/hp_upgrade.tres" id="3_rtg2n"]
+[ext_resource type="Resource" uid="uid://dk6tfi4srlho3" path="res://world/entities/upgrades/speed_upgrade.tres" id="4_nsjn3"]
+[ext_resource type="Resource" uid="uid://b5r56xvhs3ilf" path="res://world/entities/upgrades/damage_upgrade.tres" id="5_7qfil"]
+[ext_resource type="Resource" uid="uid://uorjgom5v1x2" path="res://world/entities/upgrades/cooldown_upgrade.tres" id="6_rtg2n"]
+[ext_resource type="Resource" uid="uid://d0w1mw1p2gxb2" path="res://world/entities/upgrades/aoe_upgrade.tres" id="7_nsjn3"]
+
+[node name="UpgradeManager" type="Node" unique_id=916431573]
+process_mode = 3
+script = ExtResource("1_sorxq")
+upgrade_pool = Array[ExtResource("2_s6nuu")]([ExtResource("3_rtg2n"), ExtResource("4_nsjn3"), ExtResource("5_7qfil"), ExtResource("6_rtg2n"), ExtResource("7_nsjn3")])

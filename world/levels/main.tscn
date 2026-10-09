@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bkrmdt2ndsa1v"]
+
+[ext_resource type="PackedScene" uid="uid://e3bb5wivibyf" path="res://systems/level_system.tscn" id="1_x1qn8"]
+[ext_resource type="Script" uid="uid://cu47rby677dan" path="res://systems/wave_data.gd" id="3_8pwq4"]
+[ext_resource type="Script" uid="uid://b4rq8h4lby8g7" path="res://systems/spawn_manager.gd" id="4_acdbw"]
+[ext_resource type="Resource" uid="uid://b0twyfuu83qkw" path="res://world/levels/waves/wave_1.tres" id="4_om584"]
+[ext_resource type="Resource" uid="uid://ydp6phoufiad" path="res://world/levels/waves/wave_2.tres" id="5_biqpt"]
+[ext_resource type="PackedScene" uid="uid://fdq2puq3ee0h" path="res://world/entities/player/Player.tscn" id="6_5iar6"]
+[ext_resource type="PackedScene" uid="uid://bxct7emxgkpk1" path="res://ui/HUD/HUD.tscn" id="8_om584"]
+[ext_resource type="PackedScene" uid="uid://co771l1fus4o7" path="res://systems/upgrade_manager.tscn" id="9_biqpt"]
+[ext_resource type="PackedScene" uid="uid://b4g2sihwqsb2t" path="res://systems/game_win_manager.tscn" id="9_om584"]
+
+[sub_resource type="Curve2D" id="Curve2D_0snqu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, -99, 0, 0, 0, 0, 1242, -122, 0, 0, 0, 0, 1234, 718, 0, 0, 0, 0, -73, 721, 0, 0, 0, 0, -70, 20, 0, 0, 0, 0, -60, -111, 0, 0, 0, 0, 96, -94)
+}
+point_count = 7
+
+[node name="Main" type="Node" unique_id=1285181704]
+metadata/_edit_horizontal_guides_ = [-112.0]
+
+[node name="level_system_node" parent="." unique_id=2099058925 instance=ExtResource("1_x1qn8")]
+
+[node name="spawn_manager_node" type="Node" parent="." unique_id=439706592]
+script = ExtResource("4_acdbw")
+waves = Array[ExtResource("3_8pwq4")]([ExtResource("4_om584"), ExtResource("5_biqpt")])
+
+[node name="Player" parent="." unique_id=1164220307 instance=ExtResource("6_5iar6")]
+position = Vector2(550, 300)
+speed = 500
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=319339841]
+position = Vector2(-548, -294)
+curve = SubResource("Curve2D_0snqu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1668016759]
+unique_name_in_owner = true
+position = Vector2(96, -99)
+rotation = -0.020067114
+
+[node name="HUD" parent="." unique_id=1782465210 instance=ExtResource("8_om584")]
+
+[node name="GameWinManager" parent="." unique_id=1440865314 instance=ExtResource("9_om584")]
+
+[node name="UpgradeManager" parent="." unique_id=916431573 instance=ExtResource("9_biqpt")]

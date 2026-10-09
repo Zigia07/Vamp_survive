@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://ydp6phoufiad"]
+
+[ext_resource type="Script" uid="uid://c8o1p6ekvf8y8" path="res://systems/enemy_data.gd" id="1_kn36e"]
+[ext_resource type="Script" uid="uid://cu47rby677dan" path="res://systems/wave_data.gd" id="2_cfk23"]
+[ext_resource type="Resource" uid="uid://lqurwjlhmgdh" path="res://world/entities/enemies/rat_data.tres" id="2_p0jn6"]
+[ext_resource type="Resource" uid="uid://chqfwt688cvad" path="res://world/entities/enemies/slime_data.tres" id="3_mgkn7"]
+
+[resource]
+script = ExtResource("2_cfk23")
+wave_start = 10.0
+spawn_rate = 1.6
+enemy_pool = Array[ExtResource("1_kn36e")]([ExtResource("2_p0jn6"), ExtResource("3_mgkn7")])
+metadata/_custom_type_script = "uid://cu47rby677dan"
